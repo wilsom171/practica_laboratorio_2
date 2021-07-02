@@ -1,0 +1,25 @@
+<div style="text-align:center">
+  <h1>
+    Proyecto realizado en Angular 
+  </h1>
+  <h3 *ngIf="mostrar_autor==true">
+    Autor: {{ autor }}
+  </h3>
+  <ul  *ngIf="mostrar_lista">
+    <li *ngFor="let users of lista_de_usuarios">
+        {{users}}
+    </li>
+  </ul>
+  <button (click)="change()" class="btn btn-info" > {{texto_boton}}</button>
+</div>
+
+<div class="row">
+  <div class="col-md-3">
+      <label>Nombre</label>
+      <input class="form-control" [(ngModel)]="autor" #ctrl="ngModel" required>      
+  </div>
+  <div class="col-md-3">
+      <br>
+      <button (click)="buscar()" class="btn btn-success"> Buscar </button>              
+  </div>
+</div>
